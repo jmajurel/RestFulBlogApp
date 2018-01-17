@@ -1,0 +1,14 @@
+<% include layouts/header %>
+
+<h1>Blogs</h1>
+
+<% blogs.forEach(function(blog) { %>
+  <div class="blogPost">
+    <h4><%= blog.title %></h4>
+    <img src="<%= blog.image %>">
+    <span><%= blog.created %></span>
+    <p><%= blog.body %></p>
+  </div>
+<% }); %>
+
+<% include layouts/footer %>

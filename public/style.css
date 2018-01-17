@@ -1,0 +1,11 @@
+
+.blogPost {
+  margin: 20px auto;  
+}
+
+.blogPost img {
+  height: 300px;
+  width: auto;
+  border: 1px solid rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+}
