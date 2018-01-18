@@ -1,0 +1,28 @@
+<% include layouts/header %>
+
+<div class="ui text container main">
+
+  <h1>Create new Post</h1>
+
+  <form class="ui form" action="/blogs" method="POST">
+    <div class="field">
+      <label>Title</label>
+      <input type="text" name="blogs[title]" placeholder="text">
+    </div>
+
+    <div class="field">
+      <label>Image</label>
+      <input type="url" name="blogs[image]" placeholder="url">
+    </div>
+
+    <div class="field">
+      <label>Post</label>
+      <textarea name="blogs[body]"></textarea>
+    </div>
+
+    <button class="ui button large purple reversed" type="submit">Submit</button>
+
+  </div> 
+</div>
+
+<% include layouts/footer %>
