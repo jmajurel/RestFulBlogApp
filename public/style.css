@@ -1,12 +1,10 @@
-
-.blogPost {
+.blogPost:nth-of-type(2n) {
   margin: 20px auto;  
+  background-color: lightgray;
 }
 
-.blogPost img {
-  height: 300px;
-  width: auto;
-  border: 1px solid rgba(0, 0, 0, 0.7);
+img {
+  width: 45%;
   border-radius: 10px;
 }
 
@@ -16,4 +14,15 @@ h1 {
 
 .container.main{
   margin-top: 60px;
+}
+
+.container.blogPost {
+  padding: 10px;
+}
+
+#deleteBtn {
+  display: inline;
+}
+.post-content {
+  font-family: 'Raleway', sans-serif;
 }

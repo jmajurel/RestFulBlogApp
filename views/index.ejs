@@ -1,15 +1,20 @@
 <% include layouts/header %>
 
 <div class="ui container main">
-  <h1>Blogs</h1>
+  <h1 class="ui header">Blogs</h1>
 
   <% blogs.forEach(function(blog) { %>
-    <div class="blogPost">
-      <h4><%= blog.title %></h4>
+    <div class="ui container blogPost">
+      <h2 class="ui header">
+        <i class="ui mail outline icon "></i>
+        <div class="content">
+	  <%= blog.title %>
+	</div>
+      </h2>
       <img src="<%= blog.image %>">
-      <span><%= blog.created %></span>
-      <p><%= blog.body.substring(0, 20); %></p>
-      <a href="/blogs/<%=blog._id%>">Read More</a>
+      <div class="post-content"><%= blog.created.toLocaleString() %></div>
+      <p class="post-content"><%= blog.body.substring(0, 20); %> ...</p>
+      <a class="ui button right" role="button" href="/blogs/<%=blog._id%>">Read More</a>
     </div>
   <% }); %>
 </div>
