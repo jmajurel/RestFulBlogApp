@@ -1,16 +1,16 @@
 <% include layouts/header %>
 
 <div class="ui container main">
-  <div class="ui container segment">
+  <div class="ui container">
     <h2 class="ui header">
       <i class="ui open envelope outline icon"></i>
       <div class="content">
         <%= post.title %>
       </div>
     </h2>
-    <img class="ui rounded image" src="<%= post.image %>">
+    <img class="ui rounded large image" src="<%= post.image %>">
     <p class="post-content"><%= post.created.toLocaleString()  %></p>
-    <p class="post-content"><%= post.body %></p>
+    <p class="post-content"><%- post.body %></p>
     <a class="ui button yellow inverted" role="button" href="/blogs/<%= post._id %>/edit">Edit</a>
     <form id="deleteBtn" action="/blogs/<%= post._id %>?_method=DELETE" method="POST">
       <button class="ui button red inverted">Delete</button>

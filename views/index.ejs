@@ -1,22 +1,36 @@
 <% include layouts/header %>
 
 <div class="ui container main">
-  <h1 class="ui header">Blogs</h1>
-
-  <% blogs.forEach(function(blog) { %>
-    <div class="ui container blogPost">
-      <h2 class="ui header">
-        <i class="ui mail outline icon "></i>
+  <h1 class="ui header">RestFul Blogs App</h1>
+  <div id="blog" class="ui divided items">
+    <% blogs.forEach(function(blog) { %>
+      <div class="item">
+        <div class="ui image medium rounded">
+          <img src="<%= blog.image %>">
+        </div>
         <div class="content">
-	  <%= blog.title %>
-	</div>
-      </h2>
-      <img src="<%= blog.image %>">
-      <div class="post-content"><%= blog.created.toLocaleString() %></div>
-      <p class="post-content"><%= blog.body.substring(0, 20); %> ...</p>
-      <a class="ui button right" role="button" href="/blogs/<%=blog._id%>">Read More</a>
-    </div>
-  <% }); %>
+          <div class="header">
+            <i class="ui mail outline icon "></i>
+            <%= blog.title %>
+          </div>
+          <div class="meta">
+            <div class="date">
+              <%= blog.created.toLocaleString() %>
+            </div>
+          </div>
+          <div class="description">
+            <div class="post">
+              <%- blog.body.substring(0, 100); %>
+              ...
+            </div>
+          </div>
+          <div class="extra">
+            <a class="ui button right" role="button" href="/blogs/<%=blog._id%>">Read More</a>
+          </div>
+        </div>
+      </div>
+    <% }); %>
+  </div>
 </div>
 
 <% include layouts/footer %>
